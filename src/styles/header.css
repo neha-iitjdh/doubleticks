@@ -1,0 +1,17 @@
+/* Header component styles */
+.header {
+  height: var(--header-height);
+  padding: 0 var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  background: var(--background);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__logo {
+  height: 32px;
+  object-fit: contain;
+}
