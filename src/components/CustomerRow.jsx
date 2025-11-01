@@ -1,7 +1,7 @@
-import { memo } from 'react';
-import { UserIcon } from '../assets/icons';
-import { formatDate } from '../utils/helpers';
-import avatarImg from '../assets/avatar.svg';
+import { memo } from "react";
+import { UserIcon } from "../assets/icons";
+import { formatDate } from "../utils/helpers";
+import avatarImg from "../assets/1231415.png";
 
 // Individual customer row component (memoized for performance)
 export const CustomerRow = memo(({ customer, style }) => {
@@ -10,7 +10,7 @@ export const CustomerRow = memo(({ customer, style }) => {
       <div>
         <input type="checkbox" className="customer-row__checkbox" />
       </div>
-      
+
       <div className="customer-row__info">
         <img src={avatarImg} alt="Avatar" className="customer-row__avatar" />
         <div className="customer-row__details">
@@ -18,13 +18,15 @@ export const CustomerRow = memo(({ customer, style }) => {
           <div className="customer-row__phone">{customer.phone}</div>
         </div>
       </div>
-      
+
       <div className="customer-row__score">{customer.score}</div>
-      
+
       <div className="customer-row__email">{customer.email}</div>
-      
-      <div className="customer-row__date">{formatDate(customer.lastMessageAt)}</div>
-      
+
+      <div className="customer-row__date">
+        {formatDate(customer.lastMessageAt)}
+      </div>
+
       <div className="customer-row__added-by">
         <UserIcon className="customer-row__user-icon" />
         <span>{customer.addedBy}</span>
@@ -33,4 +35,4 @@ export const CustomerRow = memo(({ customer, style }) => {
   );
 });
 
-CustomerRow.displayName = 'CustomerRow';
+CustomerRow.displayName = "CustomerRow";
